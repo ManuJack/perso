@@ -1,6 +1,7 @@
 package com.hebdo.manager.screen
 {
 	import com.hebdo.manager.event.DrawEvent;
+	import com.hebdo.manager.utils.HebdoType;
 	
 	import feathers.controls.Button;
 	import feathers.controls.Check;
@@ -8,6 +9,7 @@ package com.hebdo.manager.screen
 	import feathers.controls.LayoutGroup;
 	import feathers.controls.Radio;
 	import feathers.controls.ToggleSwitch;
+	import feathers.core.FeathersControl;
 	import feathers.core.ToggleGroup;
 	import feathers.layout.AnchorLayout;
 	import feathers.layout.AnchorLayoutData;
@@ -65,17 +67,20 @@ package com.hebdo.manager.screen
 			_radioGroup.isSelectionRequired = true;
 			
 			_radioDyp = new Radio();
+			_radioDyp.name = HebdoType.DYP;
 			_radioDyp.label = "DYP";
 			_radioDyp.toggleGroup = _radioGroup;
 			radioContainer.addChild(_radioDyp);
 			
 			_radioDouble = new Radio();
+			_radioDouble.name = HebdoType.OPEN_DOUBLE;
 			_radioDouble.label = "Open Double";
 			_radioDouble.toggleGroup = _radioGroup;
 			radioContainer.addChild(_radioDouble);
 			
 			_radioSingle = new Radio();
-			_radioSingle.label = "Single";
+			_radioSingle.name = HebdoType.OPEN_SINGLE;
+			_radioSingle.label = "Open Single";
 			_radioSingle.toggleGroup = _radioGroup;
 			radioContainer.addChild(_radioSingle);
 			
@@ -86,7 +91,7 @@ package com.hebdo.manager.screen
 			lblFormat.text = "Format:";
 			lblFormat.layoutData = new AnchorLayoutData(NaN, NaN, NaN, 0, NaN, 0);
 			
-			formatContainer.addChild(lblFormat);
+			//formatContainer.addChild(lblFormat);
 			formatContainer.addChild(radioContainer);
 			addChild(formatContainer);
 			
@@ -115,6 +120,7 @@ package com.hebdo.manager.screen
 		private function onBtnDrawTriggered():void
 		{
 			sessionData.useMedian = _chkMedian.isSelected;
+			sessionData.hebdoType = FeathersControl(_radioGroup.selectedItem).name;
 			
 			drawModel.addEventListener(DrawEvent.DRAW_COMPLETE, onDrawComplete);
 			drawModel.drawPool(sessionData);

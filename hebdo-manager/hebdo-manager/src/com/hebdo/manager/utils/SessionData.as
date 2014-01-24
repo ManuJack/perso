@@ -8,9 +8,20 @@ package com.hebdo.manager.utils
 		private var _hebdo:Hebdo;
 		private var _players:Vector.<PlayerRegistration>;
 		private var _useMedian:Boolean;
+		private var _hebdoType:String;
 		
 		public function SessionData()
 		{
+		}
+
+		public function get hebdoType():String
+		{
+			return _hebdoType;
+		}
+
+		public function set hebdoType(value:String):void
+		{
+			_hebdoType = value;
 		}
 
 		public function get useMedian():Boolean

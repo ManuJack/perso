@@ -1,10 +1,11 @@
 package com.hebdo.manager
 {
 	import com.hebdo.manager.component.HebdoRegistrationMenu;
-	import com.hebdo.manager.model.DrawModel;
 	import com.hebdo.manager.model.HebdoModel;
 	import com.hebdo.manager.model.PlayerModel;
 	import com.hebdo.manager.model.RegistrationModel;
+	import com.hebdo.manager.model.draw.DrawModel;
+	import com.hebdo.manager.model.draw.impl.DYPPlayerDrawer;
 	import com.hebdo.manager.screen.AddPlayerListScreen;
 	import com.hebdo.manager.screen.AddPlayerScreen;
 	import com.hebdo.manager.screen.BaseScreen;

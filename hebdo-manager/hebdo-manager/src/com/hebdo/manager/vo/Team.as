@@ -1,5 +1,8 @@
 package com.hebdo.manager.vo
 {
+	/**
+	 * Represent a team, can be one or two players
+	 */
 	public class Team
 	{
 		public static const POOL_A:String = "A";
@@ -11,7 +14,7 @@ package com.hebdo.manager.vo
 		private var _player1:PlayerRegistration;
 		private var _player2:PlayerRegistration;
 		
-		public function Team(player1:PlayerRegistration, player2:PlayerRegistration)
+		public function Team(player1:PlayerRegistration, player2:PlayerRegistration = null)
 		{
 			_player1 = player1;
 			_player2 = player2;
@@ -49,12 +52,18 @@ package com.hebdo.manager.vo
 		
 		public function get totalElo():int
 		{
-			return _player1.elo + _player2.elo;
+			if (_player2)
+				return _player1.elo + _player2.elo;
+			else
+				return _player1.elo;
 		}
 		
 		public function toString():String
 		{
-			return _poolId + seed.toString() + " Total: " + totalElo + "\n" + _player1.name + " - " + _player1.elo + "\n" + _player2.name + " - " + player2.elo;
+			if (_player2)
+				return _poolId + seed.toString() + " Total: " + totalElo + "\n" + _player1.name + " - " + _player1.elo + "\n" + _player2.name + " - " + player2.elo;
+			else
+				return _poolId + seed.toString() + "\n" + _player1.name + " - " + _player1.elo;
 		}
 
 	}

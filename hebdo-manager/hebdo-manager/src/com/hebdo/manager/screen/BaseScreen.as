@@ -3,10 +3,11 @@ package com.hebdo.manager.screen
 	import com.hebdo.manager.component.busy.BusyIndicator;
 	import com.hebdo.manager.event.BusyEvent;
 	import com.hebdo.manager.model.BaseModel;
-	import com.hebdo.manager.model.DrawModel;
 	import com.hebdo.manager.model.HebdoModel;
 	import com.hebdo.manager.model.PlayerModel;
 	import com.hebdo.manager.model.RegistrationModel;
+	import com.hebdo.manager.model.draw.DrawModel;
+	import com.hebdo.manager.model.draw.impl.DYPPlayerDrawer;
 	import com.hebdo.manager.utils.SessionData;
 	
 	import flash.desktop.NativeApplication;

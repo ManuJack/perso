@@ -1,21 +1,24 @@
-package com.hebdo.manager.model
+package com.hebdo.manager.model.draw.impl
 {
 	import com.hebdo.manager.event.DrawEvent;
+	import com.hebdo.manager.model.draw.IPlayerDrawer;
 	import com.hebdo.manager.utils.Config;
 	import com.hebdo.manager.utils.SessionData;
 	import com.hebdo.manager.vo.PlayerRegistration;
 	import com.hebdo.manager.vo.Team;
+	
+	import starling.events.EventDispatcher;
 
-	public class DrawModel extends BaseModel
+	public class DYPPlayerDrawer extends EventDispatcher implements IPlayerDrawer
 	{
 		private var _players1:Vector.<PlayerRegistration>;
 		private var _players2:Vector.<PlayerRegistration>;
 		
 		private var _teams:Vector.<Team>;
 		
-		public function DrawModel(config:Config)
+		public function DYPPlayerDrawer()
 		{
-			super(config);
+			super();
 		}
 		
 		public function get teams():Vector.<Team>
@@ -34,7 +37,7 @@ package com.hebdo.manager.model
 				return;
 			}
 			
-			trace("Drawing pool of", players.length, "players");
+			trace("Drawing DYP pool of", players.length, "players");
 			
 			//sort players if using median
 			if (sessionData.useMedian)

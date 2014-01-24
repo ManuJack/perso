@@ -27,7 +27,7 @@ package com.hebdo.manager.vo
 		{
 			_data = data;
 			
-			if (isPartner)
+			if (!isPartner)
 			{
 				_name = data[NAME];
 				_elo = data[ELO];
