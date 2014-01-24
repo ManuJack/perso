@@ -501,7 +501,7 @@ package feathers.themes
 			this.smallDisabledElementFormat = new ElementFormat(this.regularFontDescription, 24 * this.scale, DISABLED_TEXT_COLOR);
 
 			this.largeDarkElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, DARK_TEXT_COLOR);
-			this.largeLightElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, LIGHT_TEXT_COLOR);
+			this.largeLightElementFormat = new ElementFormat(this.regularFontDescription, 42 * this.scale, LIGHT_TEXT_COLOR);
 			this.largeDisabledElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, DISABLED_TEXT_COLOR);
 		}
 
@@ -1043,7 +1043,7 @@ package feathers.themes
 			skinSelector.displayObjectProperties =
 			{
 				width: 88 * this.scale,
-				height: 88 * this.scale,
+				height: 108 * this.scale,
 				textureScale: this.scale
 			};
 			renderer.stateToSkinFunction = skinSelector.updateValue;
