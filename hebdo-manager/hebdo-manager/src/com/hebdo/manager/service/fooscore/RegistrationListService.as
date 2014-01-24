@@ -48,15 +48,27 @@ package com.hebdo.manager.service.fooscore
 			const players:Array = result as Array;
 			if (players)
 			{
+				var playerData:Object;
 				var i:int;
 				for (i; i<players.length; ++i)
 				{
-					results.push(new PlayerRegistration(players[i]));
+					playerData = players[i];
+					//create another PlayerRegistration in case of a partner ( OPEN DOUBLE )
+					if (playerData[PlayerRegistration.PARTNER_FULLNAME] != null && playerData[PlayerRegistration.PARTNER_FULLNAME] != "")
+					{
+						var partnerRegistration:PlayerRegistration = new PlayerRegistration(playerData, null, true);
+						results.push(partnerRegistration);
+						results.push(new PlayerRegistration(playerData, partnerRegistration));
+					}
+					else
+					{
+						results.push(new PlayerRegistration(playerData));
+					}
 				}
 			}
 			
 			if (results.length == 0)
-				results.push(new PlayerRegistration({name:"No players subscribed yet!"}));
+				results.push(new PlayerRegistration({name:"No players subscribed yet!", elo:1}));
 			
 			return results;
 		}

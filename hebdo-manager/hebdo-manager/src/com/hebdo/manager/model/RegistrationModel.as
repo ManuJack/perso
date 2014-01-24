@@ -9,6 +9,7 @@ package com.hebdo.manager.model
 	
 	import flash.utils.Dictionary;
 	
+	import feathers.controls.Alert;
 	import feathers.data.ListCollection;
 
 	public class RegistrationModel extends BaseModel
@@ -82,8 +83,9 @@ package com.hebdo.manager.model
 		
 		private function onError(error:Object):void
 		{
-			trace("error", error);
 			notBusyAnymore();
+			
+			Alert.show(error.toString(), "Error while calling foosballquebec.com", new ListCollection([{label:"OK"}]));
 		}
 		
 		private function onResult(registrations:Vector.<PlayerRegistration>):void

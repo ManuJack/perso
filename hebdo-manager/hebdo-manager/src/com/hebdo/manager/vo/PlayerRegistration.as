@@ -2,12 +2,14 @@ package com.hebdo.manager.vo
 {
 	public class PlayerRegistration
 	{
-		public static const NAME			:String = "name";
-		public static const FULLNAME		:String = "fullname";
-		public static const USER_ID			:String = "user_id";
-		public static const ELO				:String = "elo";
-		public static const TIME_RESERVED	:String = "time_reserved";
-		public static const TOURNAMENT		:String = "tournoi";
+		public static const NAME				:String = "name";
+		public static const FULLNAME			:String = "fullname";
+		public static const PARTNER_FULLNAME	:String = "partner_fullname";
+		public static const PARTNER_ELO			:String = "partner_elo";
+		public static const USER_ID				:String = "user_id";
+		public static const ELO					:String = "elo";
+		public static const TIME_RESERVED		:String = "time_reserved";
+		public static const TOURNAMENT			:String = "tournoi";
 		
 		private var _data:Object;
 		
@@ -19,15 +21,33 @@ package com.hebdo.manager.vo
 		
 		public var isEditMode:Boolean = false;
 		
-		public function PlayerRegistration(data:Object)
+		private var _partner:PlayerRegistration;
+		
+		public function PlayerRegistration(data:Object, partner:PlayerRegistration = null, isPartner:Boolean = false)
 		{
 			_data = data;
 			
-			_name = data[NAME];
-			_elo = data[ELO];
-			_fullName = data[FULLNAME];
+			if (isPartner)
+			{
+				_name = data[NAME];
+				_elo = data[ELO];
+				_fullName = data[FULLNAME];
+			}
+			else
+			{
+				_name = data[PARTNER_FULLNAME];
+				_elo = data[PARTNER_ELO];
+				_fullName = data[PARTNER_FULLNAME];
+			}
 			_timeReserved = data[TIME_RESERVED];
 			_tournament = data[TOURNAMENT];
+			
+			_partner = partner;
+		}
+
+		public function get partner():PlayerRegistration
+		{
+			return _partner;
 		}
 
 		public function get elo():Number

@@ -25,6 +25,7 @@ package com.hebdo.manager.screen
 		
 		private var _radioDyp:Radio;
 		private var _radioSingle:Radio;
+		private var _radioDouble:Radio;
 		private var _radioGroup:ToggleGroup;
 		
 		private var _btnDraw:Button;
@@ -67,6 +68,11 @@ package com.hebdo.manager.screen
 			_radioDyp.label = "DYP";
 			_radioDyp.toggleGroup = _radioGroup;
 			radioContainer.addChild(_radioDyp);
+			
+			_radioDouble = new Radio();
+			_radioDouble.label = "Open Double";
+			_radioDouble.toggleGroup = _radioGroup;
+			radioContainer.addChild(_radioDouble);
 			
 			_radioSingle = new Radio();
 			_radioSingle.label = "Single";

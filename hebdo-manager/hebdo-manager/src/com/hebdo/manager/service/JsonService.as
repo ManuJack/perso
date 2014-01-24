@@ -164,8 +164,8 @@ package com.hebdo.manager.service
 			_data = {};
 			removeListeners();
 			
-			//commonError(result);
-			throw new Error("JSON failed:" + result);
+			commonError(result);
+			//throw new Error("JSON failed:" + result);
 		}
 		
 		private function commonError(error:Object):void
