@@ -473,36 +473,36 @@ package feathers.themes
 		protected function initializeFonts():void
 		{
 			//these are for components that don't use FTE
-			this.scrollTextTextFormat = new TextFormat("_sans", 24 * this.scale, LIGHT_TEXT_COLOR);
-			this.lightUICenteredTextFormat = new TextFormat(FONT_NAME, 24 * this.scale, LIGHT_TEXT_COLOR, true, null, null, null, null, TextFormatAlign.CENTER);
+			this.scrollTextTextFormat = new TextFormat("_sans", 32 * this.scale, LIGHT_TEXT_COLOR);
+			this.lightUICenteredTextFormat = new TextFormat(FONT_NAME, 32 * this.scale, LIGHT_TEXT_COLOR, true, null, null, null, null, TextFormatAlign.CENTER);
 
 			this.regularFontDescription = new FontDescription(FONT_NAME, FontWeight.NORMAL, FontPosture.NORMAL, FontLookup.EMBEDDED_CFF, RenderingMode.CFF, CFFHinting.NONE);
 			this.boldFontDescription = new FontDescription(FONT_NAME, FontWeight.BOLD, FontPosture.NORMAL, FontLookup.EMBEDDED_CFF, RenderingMode.CFF, CFFHinting.NONE);
 
 			this.headerElementFormat = new ElementFormat(this.boldFontDescription, Math.round(36 * this.scale), LIGHT_TEXT_COLOR);
 
-			this.darkUIElementFormat = new ElementFormat(this.boldFontDescription, 24 * this.scale, DARK_TEXT_COLOR);
-			this.lightUIElementFormat = new ElementFormat(this.boldFontDescription, 24 * this.scale, LIGHT_TEXT_COLOR);
-			this.selectedUIElementFormat = new ElementFormat(this.boldFontDescription, 24 * this.scale, SELECTED_TEXT_COLOR);
-			this.lightUIDisabledElementFormat = new ElementFormat(this.boldFontDescription, 24 * this.scale, DISABLED_TEXT_COLOR);
-			this.darkUIDisabledElementFormat = new ElementFormat(this.boldFontDescription, 24 * this.scale, DARK_DISABLED_TEXT_COLOR);
+			this.darkUIElementFormat = new ElementFormat(this.boldFontDescription, 32 * this.scale, DARK_TEXT_COLOR);
+			this.lightUIElementFormat = new ElementFormat(this.boldFontDescription, 32 * this.scale, LIGHT_TEXT_COLOR);
+			this.selectedUIElementFormat = new ElementFormat(this.boldFontDescription, 32 * this.scale, SELECTED_TEXT_COLOR);
+			this.lightUIDisabledElementFormat = new ElementFormat(this.boldFontDescription, 32 * this.scale, DISABLED_TEXT_COLOR);
+			this.darkUIDisabledElementFormat = new ElementFormat(this.boldFontDescription, 32 * this.scale, DARK_DISABLED_TEXT_COLOR);
 
-			this.largeUIDarkElementFormat = new ElementFormat(this.boldFontDescription, 28 * this.scale, DARK_TEXT_COLOR);
-			this.largeUILightElementFormat = new ElementFormat(this.boldFontDescription, 28 * this.scale, LIGHT_TEXT_COLOR);
-			this.largeUISelectedElementFormat = new ElementFormat(this.boldFontDescription, 28 * this.scale, SELECTED_TEXT_COLOR);
-			this.largeUIDarkDisabledElementFormat = new ElementFormat(this.boldFontDescription, 28 * this.scale, DARK_DISABLED_TEXT_COLOR);
-			this.largeUILightDisabledElementFormat = new ElementFormat(this.boldFontDescription, 28 * this.scale, DISABLED_TEXT_COLOR);
+			this.largeUIDarkElementFormat = new ElementFormat(this.boldFontDescription, 38 * this.scale, DARK_TEXT_COLOR);
+			this.largeUILightElementFormat = new ElementFormat(this.boldFontDescription, 38 * this.scale, LIGHT_TEXT_COLOR);
+			this.largeUISelectedElementFormat = new ElementFormat(this.boldFontDescription, 38 * this.scale, SELECTED_TEXT_COLOR);
+			this.largeUIDarkDisabledElementFormat = new ElementFormat(this.boldFontDescription, 38 * this.scale, DARK_DISABLED_TEXT_COLOR);
+			this.largeUILightDisabledElementFormat = new ElementFormat(this.boldFontDescription, 38 * this.scale, DISABLED_TEXT_COLOR);
 
-			this.darkElementFormat = new ElementFormat(this.regularFontDescription, 24 * this.scale, DARK_TEXT_COLOR);
-			this.lightElementFormat = new ElementFormat(this.regularFontDescription, 24 * this.scale, LIGHT_TEXT_COLOR);
-			this.disabledElementFormat = new ElementFormat(this.regularFontDescription, 24 * this.scale, DISABLED_TEXT_COLOR);
+			this.darkElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, DARK_TEXT_COLOR);
+			this.lightElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, LIGHT_TEXT_COLOR);
+			this.disabledElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, DISABLED_TEXT_COLOR);
 
-			this.smallLightElementFormat = new ElementFormat(this.regularFontDescription, 18 * this.scale, LIGHT_TEXT_COLOR);
-			this.smallDisabledElementFormat = new ElementFormat(this.regularFontDescription, 18 * this.scale, DISABLED_TEXT_COLOR);
+			this.smallLightElementFormat = new ElementFormat(this.regularFontDescription, 24 * this.scale, LIGHT_TEXT_COLOR);
+			this.smallDisabledElementFormat = new ElementFormat(this.regularFontDescription, 24 * this.scale, DISABLED_TEXT_COLOR);
 
-			this.largeDarkElementFormat = new ElementFormat(this.regularFontDescription, 28 * this.scale, DARK_TEXT_COLOR);
-			this.largeLightElementFormat = new ElementFormat(this.regularFontDescription, 28 * this.scale, LIGHT_TEXT_COLOR);
-			this.largeDisabledElementFormat = new ElementFormat(this.regularFontDescription, 28 * this.scale, DISABLED_TEXT_COLOR);
+			this.largeDarkElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, DARK_TEXT_COLOR);
+			this.largeLightElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, LIGHT_TEXT_COLOR);
+			this.largeDisabledElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, DISABLED_TEXT_COLOR);
 		}
 
 		protected function initializeTextures():void

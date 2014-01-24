@@ -61,9 +61,9 @@ package com.hebdo.manager.vo
 		public function toString():String
 		{
 			if (_player2)
-				return _poolId + seed.toString() + " Total: " + totalElo + "\n" + _player1.name + " - " + _player1.elo + "\n" + _player2.name + " - " + player2.elo;
+				return _poolId + seed.toString() + " Total: " + totalElo + "\n" + _player1.name + "\n- " + _player1.elo + "\n" + _player2.name + "\n- " + player2.elo;
 			else
-				return _poolId + seed.toString() + "\n" + _player1.name + " - " + _player1.elo;
+				return _poolId + seed.toString() + "\n" + _player1.name + "\n- " + _player1.elo;
 		}
 
 	}
