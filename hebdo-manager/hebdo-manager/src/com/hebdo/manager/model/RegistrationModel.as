@@ -160,7 +160,7 @@ package com.hebdo.manager.model
 				return;
 			
 			registration.name = player.toString();
-			registration.elo = player.elo;
+			registration.elo = parseInt(player.elo);
 			const index:int = _playersCollection.getItemIndex(registration);
 			_playersCollection.setItemAt(registration, index);
 		}

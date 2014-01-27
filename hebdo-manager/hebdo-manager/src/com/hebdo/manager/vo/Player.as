@@ -31,14 +31,19 @@ package com.hebdo.manager.vo
 			return _lastname;
 		}
 
-		public function get elo():Number
+		public function get elo():String
 		{
-			return _elo;
+			if (isNaN(_elo) || !_elo)
+				return "";
+			
+			return _elo.toString();
 		}
 		
 		public function toString():String
 		{
-			return _firstname + " " + _lastname;
+			if (_lastname)
+				return _firstname + " " + _lastname;
+			return _firstname;
 		}
 
 	}

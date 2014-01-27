@@ -24,6 +24,21 @@
  */
 package feathers.themes
 {
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
+	import flash.errors.IllegalOperationError;
+	import flash.geom.Rectangle;
+	import flash.text.TextFormat;
+	import flash.text.TextFormatAlign;
+	import flash.text.engine.CFFHinting;
+	import flash.text.engine.ElementFormat;
+	import flash.text.engine.FontDescription;
+	import flash.text.engine.FontLookup;
+	import flash.text.engine.FontPosture;
+	import flash.text.engine.FontWeight;
+	import flash.text.engine.RenderingMode;
+	import flash.utils.getQualifiedClassName;
+	
 	import feathers.controls.Alert;
 	import feathers.controls.Button;
 	import feathers.controls.ButtonGroup;
@@ -74,22 +89,7 @@ package feathers.themes
 	import feathers.system.DeviceCapabilities;
 	import feathers.textures.Scale3Textures;
 	import feathers.textures.Scale9Textures;
-
-	import flash.display.Bitmap;
-	import flash.display.BitmapData;
-	import flash.errors.IllegalOperationError;
-	import flash.geom.Rectangle;
-	import flash.text.TextFormat;
-	import flash.text.TextFormatAlign;
-	import flash.text.engine.CFFHinting;
-	import flash.text.engine.ElementFormat;
-	import flash.text.engine.FontDescription;
-	import flash.text.engine.FontLookup;
-	import flash.text.engine.FontPosture;
-	import flash.text.engine.FontWeight;
-	import flash.text.engine.RenderingMode;
-	import flash.utils.getQualifiedClassName;
-
+	
 	import starling.core.Starling;
 	import starling.display.DisplayObject;
 	import starling.display.DisplayObjectContainer;
@@ -154,6 +154,9 @@ package feathers.themes
 
 		protected static function textRendererFactory():TextBlockTextRenderer
 		{
+			/*var returned:TextBlockTextRenderer = new TextBlockTextRenderer();
+			returned.wordWrap = true;
+			return returned;*/
 			return new TextBlockTextRenderer();
 		}
 
@@ -500,9 +503,9 @@ package feathers.themes
 			this.smallLightElementFormat = new ElementFormat(this.regularFontDescription, 24 * this.scale, LIGHT_TEXT_COLOR);
 			this.smallDisabledElementFormat = new ElementFormat(this.regularFontDescription, 24 * this.scale, DISABLED_TEXT_COLOR);
 
-			this.largeDarkElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, DARK_TEXT_COLOR);
+			this.largeDarkElementFormat = new ElementFormat(this.regularFontDescription, 42 * this.scale, DARK_TEXT_COLOR);
 			this.largeLightElementFormat = new ElementFormat(this.regularFontDescription, 42 * this.scale, LIGHT_TEXT_COLOR);
-			this.largeDisabledElementFormat = new ElementFormat(this.regularFontDescription, 32 * this.scale, DISABLED_TEXT_COLOR);
+			this.largeDisabledElementFormat = new ElementFormat(this.regularFontDescription, 42 * this.scale, DISABLED_TEXT_COLOR);
 		}
 
 		protected function initializeTextures():void

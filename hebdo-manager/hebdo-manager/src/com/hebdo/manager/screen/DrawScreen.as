@@ -68,7 +68,7 @@ package com.hebdo.manager.screen
 			
 			_radioDyp = new Radio();
 			_radioDyp.name = HebdoType.DYP;
-			_radioDyp.label = "DYP";
+			_radioDyp.label = " DYP ";
 			_radioDyp.toggleGroup = _radioGroup;
 			radioContainer.addChild(_radioDyp);
 			
