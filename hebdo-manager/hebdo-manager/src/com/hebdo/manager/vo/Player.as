@@ -5,12 +5,14 @@ package com.hebdo.manager.vo
 		public static const FIRSTNAME		:String = "prenom";
 		public static const LASTNAME		:String = "nom";
 		public static const ELO				:String = "classement";
+		public static const ID				:String = "id";
 		
 		private var _data:Object;
 		
 		private var _firstname:String;
 		private var _lastname:String;
 		private var _elo:Number;
+		private var _id:Number;
 		
 		public function Player(data:Object)
 		{
@@ -18,7 +20,13 @@ package com.hebdo.manager.vo
 			
 			_firstname = data[FIRSTNAME];
 			_lastname = data[LASTNAME];
-			_elo = data[ELO];
+			_elo = parseInt(data[ELO]);
+			_id = parseInt(data[ID]);
+		}
+
+		public function get id():Number
+		{
+			return _id;
 		}
 
 		public function get firstname():String

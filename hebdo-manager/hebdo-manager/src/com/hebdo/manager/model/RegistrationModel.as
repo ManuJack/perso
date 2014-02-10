@@ -16,6 +16,8 @@ package com.hebdo.manager.model
 	{
 		public static const INVALIDATE_DATA:String = "invalidateData";
 		
+		private var _playersEloAssociationModel:PlayersEloAssociationModel;
+		
 		private var _players:Vector.<PlayerRegistration>;
 		private var _playersCollection:ListCollection;
 		
@@ -43,6 +45,8 @@ package com.hebdo.manager.model
 		public function retreiveList(session:SessionData):void
 		{
 			_currentSession = session;
+			
+			_playersEloAssociationModel = new PlayersEloAssociationModel(_currentSession);
 			
 			_playersCollection = getListFromCache(session);
 			
@@ -91,6 +95,7 @@ package com.hebdo.manager.model
 		private function onResult(registrations:Vector.<PlayerRegistration>):void
 		{
 			_players = registrations;
+			//parseCachedRegistrationAssociations(_players);
 			
 			var dataSource:Vector.<PlayerRegistration>;
 			if (_localPlayers)
@@ -105,6 +110,18 @@ package com.hebdo.manager.model
 			dispatchEvent(event);
 			
 			notBusyAnymore();
+		}
+		
+		protected function parseCachedRegistrationAssociations(registrations:Vector.<PlayerRegistration>):void
+		{
+			var i:int;
+			var registration:PlayerRegistration;
+			for (i; i<_players.length; ++i)
+			{
+				registration = _players[i] as PlayerRegistration;
+				if (!registration.isValid())
+					registration.elo = _playersEloAssociationModel.getPlayerRegistrationElo(registration);
+			}
 		}
 		
 		private function getRandomElo():int
@@ -158,6 +175,9 @@ package com.hebdo.manager.model
 		{
 			if (!_players || !_playersCollection)
 				return;
+			
+			//save registration in cache
+			_playersEloAssociationModel.setPlayerRegistrationElo(registration, player);
 			
 			registration.name = player.toString();
 			registration.elo = parseInt(player.elo);

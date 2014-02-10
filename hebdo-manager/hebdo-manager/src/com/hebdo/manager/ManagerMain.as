@@ -128,6 +128,8 @@ package com.hebdo.manager
 		private function initSessionData():void
 		{
 			_sessionData = new SessionData();
+			
+			_sessionData.sharedObject.init();
 		}
 
 	}

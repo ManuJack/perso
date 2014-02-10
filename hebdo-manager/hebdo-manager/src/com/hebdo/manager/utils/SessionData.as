@@ -1,5 +1,6 @@
 package com.hebdo.manager.utils
 {
+	import com.hebdo.manager.utils.net.ShareObjectData;
 	import com.hebdo.manager.vo.Hebdo;
 	import com.hebdo.manager.vo.PlayerRegistration;
 
@@ -9,9 +10,17 @@ package com.hebdo.manager.utils
 		private var _players:Vector.<PlayerRegistration>;
 		private var _useMedian:Boolean;
 		private var _hebdoType:String;
+		private var _sharedObject:ShareObjectData;
 		
 		public function SessionData()
 		{
+		}
+
+		public function get sharedObject():ShareObjectData
+		{
+			if (!_sharedObject)
+				_sharedObject = new ShareObjectData("hebdoCache", "/");
+			return _sharedObject;
 		}
 
 		public function get hebdoType():String

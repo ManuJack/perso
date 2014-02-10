@@ -23,7 +23,7 @@ package com.hebdo.manager.component.renderer
 		private var _btnDelete:Button;
 		
 		/**
-		 * Action button displayed when ELO == 0 
+		 * Action button displayed when player registration is invalid (NaN)
 		 */
 		private var _btnAction:PlayerRegistrationActionButton;
 		
@@ -53,7 +53,7 @@ package com.hebdo.manager.component.renderer
 		{
 			const playerRegistration:PlayerRegistration = PlayerRegistration(data);
 			
-			if (playerRegistration.elo == 0)
+			if (!playerRegistration.isValid())
 			{
 				if (!_btnAction)
 				{
@@ -96,7 +96,7 @@ package com.hebdo.manager.component.renderer
 			var tween:Tween;
 			
 			const isEditMode:Boolean = PlayerRegistration(data).isEditMode;
-			const showActionBtn:Boolean = PlayerRegistration(data).elo == 0;
+			const showActionBtn:Boolean = !PlayerRegistration(data).isValid();
 			
 			if (isEditMode)	
 			{

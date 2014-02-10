@@ -30,13 +30,13 @@ package com.hebdo.manager.vo
 			if (!isPartner)
 			{
 				_name = data[NAME];
-				_elo = data[ELO];
+				_elo = parseInt(data[ELO]);
 				_fullName = data[FULLNAME];
 			}
 			else
 			{
 				_name = data[PARTNER_FULLNAME];
-				_elo = data[PARTNER_ELO];
+				_elo = parseInt(data[PARTNER_ELO]);
 				_fullName = data[PARTNER_FULLNAME];
 			}
 			_timeReserved = data[TIME_RESERVED];
