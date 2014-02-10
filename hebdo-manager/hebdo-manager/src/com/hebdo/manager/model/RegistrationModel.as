@@ -129,7 +129,7 @@ package com.hebdo.manager.model
 			if (!_players || !_playersCollection)
 				return;
 			
-			const index:int = _players.indexOf(player);
+			var index:int = _playersCollection.getItemIndex(player);
 			if (index > -1)
 			{
 				_playersCollection.removeItemAt(index);
