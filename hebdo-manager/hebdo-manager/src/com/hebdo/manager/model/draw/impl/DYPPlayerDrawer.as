@@ -74,16 +74,16 @@ package com.hebdo.manager.model.draw.impl
 				{
 					team.poolId = Team.POOL_B;
 				}
-				else if (team.seed == 4 || team.seed == 5)
+				else if (team.seed == 4)
 				{
 					team.poolId = Team.POOL_A;
 				}
 				else
 				{
 					if (team.seed % 2 == 0)
-						team.poolId = Team.POOL_B;
-					else
 						team.poolId = Team.POOL_A;
+					else
+						team.poolId = Team.POOL_B;
 				}
 			}
 		}

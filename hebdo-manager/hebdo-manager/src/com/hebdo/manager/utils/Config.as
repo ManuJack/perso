@@ -17,6 +17,7 @@ package com.hebdo.manager.utils
 			new Hebdo("fireballmtl", "Fireball MTL Lundi"),
 			new Hebdo("fireballriki", "Fireball Riki Mardi"),
 			new Hebdo("bonzinimtl", "Bonzini MTL Mercredi"),
+			new Hebdo("bonzinimtl4", "Bonzini MTL Mardi"),
 			new Hebdo("bonzinimtl3", "Bonzini MTL Dimanche"),
 			new Hebdo("garlandotr", "Garlando TR Samedi")
 		];
